@@ -184,6 +184,15 @@ print("Titled: ", the_best_article.title)
 the_best_article.preview()
 
 # Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
-# ... Working progress ... 
+i_c = 1
+print("Comments for the best articles:")
+for c in Comment.objects.filter(post = the_best_article):
+    print("Comment ", i_c)
+    print("Posted ", c.time_in)
+    print("Rating ", c.rating)
+    print("By ", c.user.username)
+    print(c.comment)
+    print()
+    i_c += 1
 
 # end of file
