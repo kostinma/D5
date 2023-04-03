@@ -41,7 +41,7 @@ during this period. (See Figure 11.)
 category_1 = 'economy'
 category_2 = 'health'
 category_3 = 'COVID-19'
-
+# will add categories later
 Post.objects.create(post_type = 'article',
                     author    = author_1,
                     title     = the_title,
@@ -64,7 +64,7 @@ The program's long-term goal is to establish a permanent base camp on the Moon a
 '''
 category_1 = 'science'
 category_2 = 'top_stories'
-
+# will add categories later
 Post.objects.create(post_type = 'article',
                     author    = author_2,
                     title     = the_title,
@@ -85,6 +85,7 @@ category_1 = 'rumors'
 category_2 = 'royalties'
 category_3 = 'breaking_news'
 category_4 = 'top_stories'
+# will add categories later
 Post.objects.create(post_type = 'news_piece',
                     author    = author_3,
                     title     = the_title,
