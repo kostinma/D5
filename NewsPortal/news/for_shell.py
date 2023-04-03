@@ -91,15 +91,28 @@ Post.objects.create(post_type = 'news_piece',
                     body      = the_text,
                     rating    = 0   )
 
-
-# Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
-# ... Working progress ...
-
-
-# Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
 post_1 = Post.objects.get(pk = 1)
 post_2 = Post.objects.get(pk = 2)
 post_3 = Post.objects.get(pk = 3)
+
+# Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+# ... Working progress ...
+category_1 = Category.objects.get(name = 'economy')
+category_2 = Category.objects.get(name = 'health')
+category_3 = Category.objects.get(name = 'COVID-19')
+post_1.category.add(category_1, category_2, category_3)
+
+category_1 = Category.objects.get(name = 'science')
+category_2 = Category.objects.get(name = 'top_stories')
+post_2.category.add(category_1, category_2)
+
+category_1 = Category.objects.get(name = 'rumors')
+category_2 = Category.objects.get(name = 'royalties')
+category_3 = Category.objects.get(name = 'breaking_news')
+category_4 = Category.objects.get(name = 'top_stories')
+post_3.category.add(category_1, category_2, category_3, category_4)
+
+# Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
 
 # Comments
 comment_1_post_1 = Comment.objects.create(post = post_1,
