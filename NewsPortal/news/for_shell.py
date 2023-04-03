@@ -170,12 +170,20 @@ comment_2_post_3.like()
 author_1.update_rating()
 author_2.update_rating()
 
+# Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+print("The highest rating author is ", Author.objects.all().order_by('rating')[0].user.username)
+print("Rating of the best author=", Author.objects.all().order_by('rating')[0].rating)
 
-'''
-Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
-Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
-Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
-'''
+# Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+the_best_article = Post.objects.all().order_by('rating')[0]
+print("The best article by ranking based on likes/dislikes :")
+print("By ", the_best_article.author.user.username)
+print("Posted ", the_best_article.time_in)
+print("Ranking based on likes/dislikes=", the_best_article.rating)
+print("Titled: ", the_best_article.title)
+the_best_article.preview()
 
+# Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+# ... Working progress ... 
 
 # end of file
